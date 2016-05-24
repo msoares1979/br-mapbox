@@ -1,0 +1,12 @@
+menuconfig BR2_PACKAGE_MAPBOX
+	bool "Mapbox packages"
+	default y
+	help
+	  Mapbox custom packages
+
+	  http://mapbox.com
+
+	source "$BR2_EXTERNAL/package/mapbox/geometryhpp/Config.in"
+	source "$BR2_EXTERNAL/package/mapbox/nunicode/Config.in"
+	source "$BR2_EXTERNAL/package/mapbox/qmapboxgl/Config.in"
+endmenu
