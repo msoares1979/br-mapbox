@@ -1,6 +1,7 @@
 menuconfig BR2_PACKAGE_MAPBOX
 	bool "Mapbox packages"
 	default y
+	depends on BR2_INSTALL_LIBSTDCPP && BR2_USE_WCHAR && (BR2_PACKAGE_HAS_LIBGLES || BR2_PACKAGE_HAS_LIBGL)
 	help
 	  Mapbox custom packages
 
@@ -14,3 +15,16 @@ if BR2_PACKAGE_MAPBOX
 	source "$BR2_EXTERNAL/package/mapbox/geojsonvt/Config.in"
 	source "$BR2_EXTERNAL/package/mapbox/qmapboxgl/Config.in"
 endif
+
+if !BR2_INSTALL_LIBSTDCPP
+	comment "Mapbox packages depend on a toolchain with CXX support enabled"
+endif
+
+if !BR2_USE_WCHAR
+	comment "Mapbox packages depend on a toolchain with WCHAR support enabled"
+endif
+
+if !(BR2_PACKAGE_HAS_LIBGLES || BR2_PACKAGE_HAS_LIBGL)
+	comment "Mapbox packages depend on OpenGL libgl or libgles support"
+endif
+
