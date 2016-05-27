@@ -17,7 +17,7 @@ define GEOJSONVT_CONFIGURE_CMDS
 	    -Drapidjson_cflags=""\
 		-Dvariant_cflags="" \
 		-Dgtest=0 \
-		-Dglfw=0" \
+		-Dglfw=0 \
 	)
 endef
 
