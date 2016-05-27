@@ -30,6 +30,12 @@ else
 	QMAPBOXGL_DEPENDENCIES += libgl
 endif
 
+# macro to help fetching pkg-config settings
+QMAPBOXGL_PKGCONF = $(PKG_CONFIG_HOST_BINARY) $1 $2
+
+pkg-conf-cflags = $(call QMAPBOXGL_PKGCONF,--cflags,$1)
+pkg-conf-libs   = $(call QMAPBOXGL_PKGCONF,--libs  ,$1)
+
 define QMAPBOXGL_CONFIGURE_CMDS
 	(cd $(@D); \
 		$(TARGET_CONFIGURE_OPTS) \
@@ -43,28 +49,28 @@ define QMAPBOXGL_CONFIGURE_CMDS
         -Dopengl_ldflags="$(QMAPBOXGL_OPENGL_LFLAGS)" \
         -Dgeojsonvt_static_libs="-lgeojsonvt" \
         -Dnunicode_static_libs="-lnu" \
-        -Dqt_moc="$(shell $(QT5_QMAKE) -query QT_INSTALL_BINS)/moc" \
-        -Dqt_rcc="$(shell $(QT5_QMAKE) -query QT_INSTALL_BINS)/rcc" \
-        -Dqt_core_cflags="`pkg-config --cflags Qt5Core`" \
-        -Dqt_core_ldflags="`pkg-config --libs Qt5Core`" \
-        -Dqt_gui_cflags="`pkg-config --cflags Qt5Gui`" \
-        -Dqt_gui_ldflags="`pkg-config --libs Qt5Gui`" \
-        -Dqt_location_cflags="`pkg-config --cflags Qt5Location`" \
-        -Dqt_location_ldflags="`pkg-config --libs Qt5Location`" \
-        -Dqt_network_cflags="`pkg-config --cflags Qt5Network`" \
-        -Dqt_network_ldflags="`pkg-config --libs Qt5Network`" \
-        -Dqt_opengl_cflags="`pkg-config --cflags Qt5OpenGL`" \
-        -Dqt_opengl_ldflags="`pkg-config --libs Qt5OpenGL`" \
-        -Dqt_positioning_cflags="`pkg-config --cflags Qt5Positioning`" \
-        -Dqt_positioning_ldflags="`pkg-config --libs Qt5Positioning`" \
-        -Dqt_qml_cflags="`pkg-config --cflags Qt5Qml`" \
-        -Dqt_qml_ldflags="`pkg-config --libs Qt5Qml`" \
-        -Dqt_quick_cflags="`pkg-config --cflags Qt5Quick`" \
-        -Dqt_quick_ldflags="`pkg-config --libs Qt5Quick`" \
-        -Dsqlite_cflags="`pkg-config --cflags sqlite3`" \
-        -Dsqlite_ldflags="`pkg-config --libs sqlite3`" \
-        -Dzlib_cflags="`pkg-config --cflags zlib`" \
-        -Dzlib_ldflags="`pkg-config --libs zlib`" \
+        -Dqt_moc="$(HOST_DIR)/usr/bin/moc" \
+        -Dqt_rcc="$(HOST_DIR)/usr/bin/rcc" \
+        -Dqt_core_cflags="`$(call pkg-conf-cflags,Qt5Core)`" \
+        -Dqt_core_ldflags="`$(call pkg-conf-libs,Qt5Core)`" \
+        -Dqt_gui_cflags="`$(call pkg-conf-cflags,Qt5Gui)`" \
+        -Dqt_gui_ldflags="`$(call pkg-conf-libs,Qt5Gui)`" \
+        -Dqt_location_cflags="`$(call pkg-conf-cflags,Qt5Location)`" \
+        -Dqt_location_ldflags="`$(call pkg-conf-libs,Qt5Location)`" \
+        -Dqt_network_cflags="`$(call pkg-conf-cflags,Qt5Network)`" \
+        -Dqt_network_ldflags="`$(call pkg-conf-libs,Qt5Network)`" \
+        -Dqt_opengl_cflags="`$(call pkg-conf-cflags,Qt5OpenGL)`" \
+        -Dqt_opengl_ldflags="`$(call pkg-conf-libs,Qt5OpenGL)`" \
+        -Dqt_positioning_cflags="`$(call pkg-conf-cflags,Qt5Positioning)`" \
+        -Dqt_positioning_ldflags="`$(call pkg-conf-libs,Qt5Positioning)`" \
+        -Dqt_qml_cflags="`$(call pkg-conf-cflags,Qt5Qml)`" \
+        -Dqt_qml_ldflags="`$(call pkg-conf-libs,Qt5Qml)`" \
+        -Dqt_quick_cflags="`$(call pkg-conf-cflags,Qt5Quick)`" \
+        -Dqt_quick_ldflags="`$(call pkg-conf-libs,Qt5Quick)`" \
+        -Dsqlite_cflags="`$(call pkg-conf-cflags,sqlite3)`" \
+        -Dsqlite_ldflags="`$(call pkg-conf-libs,sqlite3)`" \
+        -Dzlib_cflags="`$(call pkg-conf-cflags,zlib)`" \
+        -Dzlib_ldflags="`$(call pkg-conf-libs,zlib)`" \
         --generator-output=$(@D)/build \
         -f make \
 	)
