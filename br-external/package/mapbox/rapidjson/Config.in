@@ -1,0 +1,7 @@
+config BR2_PACKAGE_RAPIDJSON
+	bool "rapidjson"
+	default y
+	help
+	  A fast JSON parser/generator for C++ with both SAX/DOM style API
+
+	  http://rapidjson.org
