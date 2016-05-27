@@ -1,7 +1,14 @@
-config BR2_PACKAGE_QMAPBOXGL
+menuconfig BR2_PACKAGE_QMAPBOXGL
 	bool "qmapboxgl"
 	default y
 	help
 	  A library for embedding interactive, customizable vector maps.
 
 	  https://github.com/mapbox/mapbox-gl-native
+
+if BR2_PACKAGE_QMAPBOXGL
+
+config BR2_PACKAGE_QMAPBOXGL_GLES2
+	bool "Enable GLES2 support"
+
+endif
