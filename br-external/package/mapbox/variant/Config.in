@@ -1,0 +1,7 @@
+config BR2_PACKAGE_VARIANT
+	bool "variant"
+	default y
+	help
+	  An alternative to boost::variant for C++11.
+
+	  https://github.com/mapbox/variant

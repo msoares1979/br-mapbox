@@ -1,0 +1,13 @@
+VARIANT_VERSION = 1.1.0
+VARIANT_SITE = https://github.com/mapbox/variant/archive
+VARIANT_SOURCE = v$(VARIANT_VERSION).tar.gz
+VARIANT_INSTALL_STAGING = YES
+VARIANT_LICENSE = BDS-3-Clause
+VARIANT_LICENSE_FILES = LICENSE
+
+define VARIANT_INSTALL_STAGING_CMDS
+	$(INSTALL) -d $(STAGING_DIR)/usr/include/mapbox
+	cp $(@D)/*.hpp $(STAGING_DIR)/usr/include/mapbox
+endef
+
+$(eval $(generic-package))
