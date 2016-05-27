@@ -32,7 +32,8 @@ endif
 
 define QMAPBOXGL_CONFIGURE_CMDS
 	(cd $(@D); \
-		$(HOST_CONFIGURE_OPTS) \
+		$(TARGET_CONFIGURE_OPTS) \
+		$(TARGET_CONFIGURE_ARGS) \
 		PYTHON=$(HOST_DIR)/usr/bin/python2 \
 		$(HOST_DIR)/usr/bin/python2 ./deps/run_gyp \
         --depth=$(@D) $(@D)/platform/qt/platform.gyp \
