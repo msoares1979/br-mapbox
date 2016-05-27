@@ -1,6 +1,7 @@
 config BR2_PACKAGE_NUNICODE
 	bool "nunicode"
 	default y
+	select BR2_PACKAGE_SQLITE
 	help
 	  Fast, small and portable Unicode library and SQLite3 extension.
 
