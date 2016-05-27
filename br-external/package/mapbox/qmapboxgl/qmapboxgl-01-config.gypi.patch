@@ -1,36 +1,50 @@
-{
-  'target_defaults': {
-    'cflags%': [],
-    'default_configuration': 'Release',
-    'defines': [],
-    'include_dirs': [],
-    'libraries': [],
-    'cflags': ['-DQT_IMAGE_DECODERS', '-fvisibility=hidden'],
-  },
-  'variables': {
-    'qt_version_major%': ['5'],
-    'boost_cflags%': [],
-    'geojsonvt_cflags%': [],
-    'geojsonvt_ldflags%': [],
-    'geometry_cflags%': [],
-    'geometry_ldflags%': [],
-    'geometry_static_libs%': [],
-    'gtest_cflags%': [],
-    'gtest_ldflags%': [],
-    'gtest_static_libs%': [],
-    'nunicode_cflags%': [],
-    'nunicode_ldflags%': [],
-    'pixelmatch_cflags%': [],
-    'pixelmatch_ldflags%': [],
-    'pixelmatch_static_libs%': [],
-    'protozero_cflags%': [],
-    'rapidjson_cflags%': [],
-    'rapidjson_ldflags%': [],
-    'rapidjson_static_libs%': [],
-    'sqlite_static_libs%': [],
-    'variant_cflags%': [],
-    'variant_ldflags%': [],
-    'variant_static_libs%': [],
-    'zlib_static_libs%': [],
-  }
-}
+commit 7c7f7079c2d5097fc0b6627853eafd890c6dc92f
+Author: Milton Soares Filho <milton.sfilho@telefonica.com>
+Date:   Fri May 27 12:23:14 2016 -0300
+
+    add config.gypi file
+    
+    Signed-off-by: Milton Soares Filho <milton.sfilho@telefonica.com>
+
+diff --git a/config.gypi b/config.gypi
+new file mode 100644
+index 0000000..cd4b6cc
+--- /dev/null
++++ b/config.gypi
+@@ -0,0 +1,36 @@
++{
++  'target_defaults': {
++    'cflags%': [],
++    'default_configuration': 'Release',
++    'defines': [],
++    'include_dirs': [],
++    'libraries': [],
++    'cflags': ['-DQT_IMAGE_DECODERS', '-fvisibility=hidden'],
++  },
++  'variables': {
++    'qt_version_major%': ['5'],
++    'boost_cflags%': [],
++    'geojsonvt_cflags%': [],
++    'geojsonvt_ldflags%': [],
++    'geometry_cflags%': [],
++    'geometry_ldflags%': [],
++    'geometry_static_libs%': [],
++    'gtest_cflags%': [],
++    'gtest_ldflags%': [],
++    'gtest_static_libs%': [],
++    'nunicode_cflags%': [],
++    'nunicode_ldflags%': [],
++    'pixelmatch_cflags%': [],
++    'pixelmatch_ldflags%': [],
++    'pixelmatch_static_libs%': [],
++    'protozero_cflags%': [],
++    'rapidjson_cflags%': [],
++    'rapidjson_ldflags%': [],
++    'rapidjson_static_libs%': [],
++    'sqlite_static_libs%': [],
++    'variant_cflags%': [],
++    'variant_ldflags%': [],
++    'variant_static_libs%': [],
++    'zlib_static_libs%': [],
++  }
++}
