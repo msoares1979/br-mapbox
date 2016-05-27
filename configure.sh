@@ -9,7 +9,7 @@ fetch_buildroot ()
 
 do_configure ()
 {
-	make BR2_EXTERNAL=$PWD/br-external -C buildroot O=$PWD/output/fancyboard myfancyboard_defconfig
+	make BR2_EXTERNAL=$PWD/br-external -C buildroot O=$PWD/output/fancyboard qemu_x86_64_defconfig
 }
 
 if [ ! -d buildroot ]; then
