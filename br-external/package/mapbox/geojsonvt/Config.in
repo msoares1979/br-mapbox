@@ -1,0 +1,10 @@
+config BR2_PACKAGE_GEOJSONVT
+	bool "geojsonvt"
+	default y
+	help
+	  Slice GeoJSON into vector tiles on the fly in the browser
+
+	  Port to C++ of JS GeoJSON-VT for slicing GeoJSON into vector tiles on the
+	  fly.
+
+	  https://github.com/mapbox/geojson-vt-cpp
