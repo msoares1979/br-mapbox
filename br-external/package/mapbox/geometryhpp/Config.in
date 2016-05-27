@@ -1,0 +1,10 @@
+config BR2_PACKAGE_GEOMETRYHPP
+	bool "geometryhpp"
+	default y
+	help
+	  C++ geometry types
+
+	  Provides header-only, generic C++ interfaces for geometry types, geometry
+	  collections, and features.
+
+	  https://github.com/mapbox/geometry.hpp

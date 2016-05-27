@@ -1,0 +1,7 @@
+config BR2_PACKAGE_QMAPBOXGL
+	bool "qmapboxgl"
+	default y
+	help
+	  A library for embedding interactive, customizable vector maps.
+
+	  https://github.com/mapbox/mapbox-gl-native

@@ -1,0 +1,9 @@
+config BR2_PACKAGE_NUNICODE
+	bool "nunicode"
+	default y
+	help
+	  Fast, small and portable Unicode library and SQLite3 extension.
+
+	  This is i18n library implementing Unicode 8.0.
+
+	  https://bitbucket.org/alekseyt/nunicode
