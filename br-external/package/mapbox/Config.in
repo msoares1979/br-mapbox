@@ -12,6 +12,5 @@ if BR2_PACKAGE_MAPBOX
 	source "$BR2_EXTERNAL/package/mapbox/variant/Config.in"
 	source "$BR2_EXTERNAL/package/mapbox/protozero/Config.in"
 	source "$BR2_EXTERNAL/package/mapbox/geojsonvt/Config.in"
-	source "$BR2_EXTERNAL/package/mapbox/rapidjson/Config.in"
 	source "$BR2_EXTERNAL/package/mapbox/qmapboxgl/Config.in"
 endif
