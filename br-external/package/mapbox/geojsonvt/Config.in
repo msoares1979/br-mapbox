@@ -1,6 +1,7 @@
 config BR2_PACKAGE_GEOJSONVT
 	bool "geojsonvt"
 	default y
+	select BR2_PACKAGE_RAPIDJSON
 	help
 	  Slice GeoJSON into vector tiles on the fly in the browser
 
