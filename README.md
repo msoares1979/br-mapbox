@@ -42,6 +42,10 @@ Enable framebuffer device on kernel
     make linux-menuconfig
 	Device Drivers -> Graphics Support -> QXL Virtual GPU
 
+Build all packages.
+
+	make
+
 Run `qemu` with the following options.
 
     qemu-system-x86_64 -M pc -kernel images/bzImage -drive file=images/rootfs.ext2,if=ide,format=raw -append root=/dev/sda -net nic,model=rtl8139 -net user -vga qxl
