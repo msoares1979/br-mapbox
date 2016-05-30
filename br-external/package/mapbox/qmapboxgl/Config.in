@@ -2,6 +2,7 @@ menuconfig BR2_PACKAGE_QMAPBOXGL
 	bool "qmapboxgl"
 	select BR2_PACKAGE_BOOST
 	select BR2_PACKAGE_QT5
+	select BR2_PACKAGE_GTEST
 	default y
 	help
 	  A library for embedding interactive, customizable vector maps.
