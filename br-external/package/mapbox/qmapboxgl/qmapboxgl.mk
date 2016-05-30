@@ -92,7 +92,7 @@ define QMAPBOXGL_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 755 $(@D)/build/out/Release/qmapboxgl $(TARGET_DIR)/usr/bin
 	$(INSTALL) -m 755 $(@D)/build/out/Release/qquickmapboxgl $(TARGET_DIR)/usr/bin
 
-	$(INSTALL) -C $(@D)/build/out/Release/lib.target/ libqmapboxgl $(TARGET_DIR)/usr/lib
+	$(INSTALL) $(@D)/build/out/Release/lib.target/libqmapboxgl.so* $(TARGET_DIR)/usr/lib
 endef
 
 $(eval $(generic-package))
