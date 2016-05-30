@@ -28,7 +28,7 @@ define GEOJSONVT_BUILD_CMDS
 endef
 
 define GEOJSONVT_INSTALL_STAGING_CMDS
-	$(TARGET_MAKE_ENV) $(MAKE) -C $(@D)/build install
+	$(TARGET_MAKE_ENV) $(MAKE) $(GEOJSONVT_MAKE_OPTS) -C $(@D)/build install
 endef
 
 $(eval $(generic-package))
