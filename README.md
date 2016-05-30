@@ -1,9 +1,9 @@
 # Buildroot External for Mapbox
 
-This external extension contains packages definitions for building the (Mapbox
-Qt SDK)[2] for (Buildroot)[1].
+This external extension contains packages definitions for building the [Mapbox
+Qt SDK][2] for [Buildroot][1].
 
-These configurations where heavily inspired on (meta-mapbox)[3] Github
+These configurations where heavily inspired on [meta-mapbox][3] Github
 repository.
 
 ## Dependencies
