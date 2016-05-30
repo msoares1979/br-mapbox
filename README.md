@@ -20,6 +20,32 @@ There is a `configure.sh` script to automate your building. It basically fetches
 2016-02 version of buildroot and points it to the `br-external` structure.
 
     make BR2_EXTERNAL=$PWD/br-external -C buildroot O=$PWD/output/fancyboard qemu_x86_64_defconfig
+    cd output/fancyboard
+
+Enable GlibC on the toolchain configuration.
+
+    make menuconfig
+	Toolchain -> Enable C++ Support
+
+Select an OpenGL EL or OpenGL ES2 implementation, e.g. Mesa:
+
+    Target Packages -> Graphical Libraries -> mesa3d
+	[x] Gallium swrast driver
+	[x] OpenGL ES
+
+Check for mapbox packages configuration
+
+    User-Provided options -> Mapbox packages -> ...
+
+Enable framebuffer device on kernel
+
+    make linux-menuconfig
+	Device Drivers -> Graphics Support -> QXL Virtual GPU
+
+Run `qemu` with the following options.
+
+    qemu-system-x86_64 -M pc -kernel images/bzImage -drive file=images/rootfs.ext2,if=ide,format=raw -append root=/dev/sda -net nic,model=rtl8139 -net user -vga qxl
+
 
 ## Caveats
 
